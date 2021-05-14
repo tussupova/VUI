@@ -1,16 +1,14 @@
 einstein :-
-    /*barva, narodnost, napoj, cigarety, zvire*/
     Dum = [_,_,_,_,_],
-    
+    /*barva, narodnost, napoj, cigarety, zvire */
     /*Angličan žije v červeném domě*/
     member([cerveny,anglican, _, _, _], Dum),
     /*Švéd chová psy.*/
     member([_,sved, _, _, pes], Dum),
     /*Dán pije čaj.*/
     member([_,dan,caj,_,_], Dum), 
-    
-    /*TODO Zelený dům je hned nalevo od bílého.?????*/
-    
+    /*TODO Zelený dům je hned nalevo od bílého.*/
+    nextto([zeleny,_,_,_,_], [bily,_,_,_,_], Dum),
     
      /*Obyvatel zeleného domu pije kávu.*/
   	member([zeleny,_,kava,_,_], Dum), 
@@ -21,8 +19,10 @@ einstein :-
     /*Obyvatel žlutého domu kouří Dunhill*/
     member([zluty,_,_,dunhill,_], Dum),
     
-    /*TODO Ten, co žije ve středním domě, pije mléko.???*/
-    /* TODO Nor žije v prvním domě ????*/
+    /*Ten, co žije ve středním domě, pije mléko.*/
+    nth1(3, Dum, [_,_,mleko,_,_]),
+    /* Nor žije v prvním domě */
+    nth1(1, Dum, [_,nor,_,_,_]),
     /*TODO Ten, co kouří Blend, žije vedle toho, co chová kočky.*/
     /*TODO Ten, co chová koně, žije vedle toho, co kouří Dunhill.*/
     
@@ -30,24 +30,13 @@ einstein :-
     member([_,_,pivo,bluemaster,_], Dum),
     
     /*Němec kouří Prince.*/
-    member([_,nemec,_,prince,_], Dum).
+    member([_,nemec,_,prince,_], Dum),
 
 	/*TODO Nor žije vedle modrého domu.*/
+     nextto([_,nor,_,_,_], [modry,_,_,_,_], Dum),
+    /* TODO Ten, co kouří Blend, má souseda, který pije vodu */
+    write('Cele reseni: '), write(Dum), nl.
 
-	/* TODO Ten, co kouří Blend, má souseda, který pije vodu
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+	
 
     
