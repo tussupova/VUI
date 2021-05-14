@@ -1,0 +1,53 @@
+einstein :-
+    /*barva, narodnost, napoj, cigarety, zvire*/
+    Dum = [_,_,_,_,_],
+    
+    /*Angličan žije v červeném domě*/
+    member([cerveny,anglican, _, _, _], Dum),
+    /*Švéd chová psy.*/
+    member([_,sved, _, _, pes], Dum),
+    /*Dán pije čaj.*/
+    member([_,dan,caj,_,_], Dum), 
+    
+    /*TODO Zelený dům je hned nalevo od bílého.?????*/
+    
+    
+     /*Obyvatel zeleného domu pije kávu.*/
+  	member([zeleny,_,kava,_,_], Dum), 
+    
+    /*Ten, co kouří Pall Mall, chová ptáky.*/
+    member([_,_,_,pallmall,ptak], Dum),
+    
+    /*Obyvatel žlutého domu kouří Dunhill*/
+    member([zluty,_,_,dunhill,_], Dum),
+    
+    /*TODO Ten, co žije ve středním domě, pije mléko.???*/
+    /* TODO Nor žije v prvním domě ????*/
+    /*TODO Ten, co kouří Blend, žije vedle toho, co chová kočky.*/
+    /*TODO Ten, co chová koně, žije vedle toho, co kouří Dunhill.*/
+    
+    /*Ten, co kouří Blue Master, pije pivo.*/
+    member([_,_,pivo,bluemaster,_], Dum),
+    
+    /*Němec kouří Prince.*/
+    member([_,nemec,_,prince,_], Dum).
+
+	/*TODO Nor žije vedle modrého domu.*/
+
+	/* TODO Ten, co kouří Blend, má souseda, který pije vodu
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
