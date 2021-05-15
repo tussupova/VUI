@@ -1,4 +1,4 @@
-einstein :-
+hadanka :-
     Dum = [_,_,_,_,_],
     /*barva, narodnost, napoj, cigarety, zvire */
     /*Angličan žije v červeném domě*/
@@ -24,8 +24,10 @@ einstein :-
     /* Nor žije v prvním domě */
     nth1(1, Dum, [_,nor,_,_,_]),
     /*TODO Ten, co kouří Blend, žije vedle toho, co chová kočky.*/
-    /*TODO Ten, co chová koně, žije vedle toho, co kouří Dunhill.*/
+    soused([_,_,_,bled,_],[_,_,_,_,kocka], Dum),
     
+    /*TODO Ten, co chová koně, žije vedle toho, co kouří Dunhill.*/
+    soused([_,_,_,_,kun],[_,_,_,dunhill,_], Dum),
     /*Ten, co kouří Blue Master, pije pivo.*/
     member([_,_,pivo,bluemaster,_], Dum),
     
@@ -35,7 +37,15 @@ einstein :-
 	/*TODO Nor žije vedle modrého domu.*/
      nextto([_,nor,_,_,_], [modry,_,_,_,_], Dum),
     /* TODO Ten, co kouří Blend, má souseda, který pije vodu */
-    write('Cele reseni: '), write(Dum), nl.
+    soused([_,_,_,bled,_],[_,_,voda,_,_], Dum),
+    
+    member([_,Kdo,_,_,ryba], Dum),
+    
+    write('Cele reseni: '), write(Dum), nl,
+    write('Rybu ma '), write(Kdo).
+
+	soused(Prvni, Druhy, Seznam):- 
+    	nextto(Prvni, Druhy, Seznam) ; nextto(Druhy,Prvni,Seznam).
 
 	
 
